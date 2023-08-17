@@ -13,3 +13,41 @@ VALUES ('Charmander', '2020-02-08', 0, false, -11),
 ('Boarmon', '2005-06-07', 7, true, 20.4), 
 ('Blossom', '1998-10-13', 3, true, 17),
 ('Ditto', '2022-05-14', 4, true, 22);
+
+--add to owners table
+INSERT INTO owners (full_name, age) 
+VALUES ('Sam Smith', 34), 
+('Jennifer', 19), 
+('Bob', 45), 
+('Melody', 77), 
+('Dean Winchester', 14), 
+('Jodie Whittaker', 38);
+
+--add to species
+INSERT INTO species (name) VALUES ('Pokemon'), ('Digimon');
+
+--add species_id to animals
+UPDATE animals SET species_id = CASE  WHEN name LIKE '%_mon' 
+THEN (SELECT id FROM species WHERE name = 'Digimon') 
+ELSE (SELECT id FROM species WHERE name = 'Pokemon') 
+END;
+
+--include owners in animals
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Sam Smith') 
+WHERE name = 'Argumon';
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell') 
+WHERE name IN ('Gabumon', 'Pikatchu');
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Bob') 
+WHERE name IN ('Devimon', 'Plantmon');
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Melody') 
+WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester') 
+WHERE name IN ('Angemon', 'Boarmon');
+
+--SELECT WITH JOIN
+SELECT name FROM animals 
+INNER JOIN owners ON animals.owner_id = owners.id 
+WHERE owners.full_name = 'Melody Pond';
+SELECT animals.name FROM animals
+INNER JOIN species ON animals.species_id = species.id 
+WHERE species.name = 'Pokemon';
