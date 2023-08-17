@@ -88,3 +88,9 @@ ON owners.id = animals.owner_id
 GROUP BY owners.full_name 
 ORDER BY animal_count 
 DESC LIMIT 1;
+SELECT animals.name, owners.full_name AS owner 
+FROM animals 
+INNER JOIN owners 
+ON animals.owner_id = owners.id 
+WHERE owners.full_name = 'Melody Pond';
+
