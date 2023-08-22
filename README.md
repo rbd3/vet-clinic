@@ -60,6 +60,8 @@ This repository includes files with plain SQL to recreate a database:
 - **[Animale table]**
 - - **[Add some data]**
 - **[some queries]**
+ - **[join tables]**
+  - **[schema diagram]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,6 +113,11 @@ To run the project, execute the following command:
 - Twitter: [@Narson321](https://twitter.com/@Narson321)
 - LinkedIn: [@Andry Narson Rabedesana](https://linkedin.com/in/andry-rabedesana)
 
+👤 **Cosmas wasswa**
+
+- GitHub: [@githubhandle](https://github.com/cosywasswa)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/cosmas-wasswa/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,9 +125,7 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add animals' owners]**
-- [ ] **[Add clinic employees]**
-- [ ] **[Add visits]**
+- [ ] **[Add database based on schema]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
